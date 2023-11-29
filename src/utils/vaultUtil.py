@@ -19,7 +19,7 @@ class VaultClient:
             auth_response.raise_for_status()
 
             token = auth_response.json()["auth"]["client_token"]
-            print("token=======", token)
+            print("token", token)
             return token
 
         except requests.exceptions.RequestException as e:
@@ -46,8 +46,8 @@ class VaultClient:
 
 if __name__ == "__main__":
     VAULT_URL = "http://127.0.0.1:8200"
-    ROLE_ID = "328d4ef0-de57-ed70-611f-ecebfa1f0ffa"
-    SECRET_ID = "8a49d6e0-d3d9-9255-adaa-884bba87e9fd"
+    ROLE_ID = "2dabf32f-c39c-54f8-e083-6d7c7f31f5e7"
+    SECRET_ID = "0b5b40c7-b87c-eb23-8a09-87b7835ade2b"
     SECRET_PATH = "secret/data/aws"
 
     vault_client = VaultClient(VAULT_URL, ROLE_ID, SECRET_ID, SECRET_PATH)
